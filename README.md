@@ -14,7 +14,11 @@ but it should work in Windows (WSL?) with tweaks.
 `rm src` <br>
 `ln -s /PATH/TO/STM8/LIBRARY/src src` <br>
 4. Add an external tool with [these settings](./MISC_INSTALL_FILES/stm8flash.png)
-5. Set a breakpoint in the code and click the debug button...
+   1. Name: `stm8flash STM8S103`
+   2. Program: `stm8flash`
+   3. Arguments: `-c stlinkv2 -p stm8s103?3 -s flash -w ./$CMakeCurrentTargetName$.hex`
+   4. Working Directory: `$CMakeCurrentBuildDir$`
+5. Set a breakpoint in the code and click the debug button... *NOTE: Cross Fingers for Good Luck*
 5. (Optional) Load the SVD file from MISC_INSTALL_FILES/STM8S103F3.svd
 
 ## Components (Required tool-chain elements):
