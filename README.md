@@ -54,4 +54,5 @@ Working Directory: `$CMakeCurrentBuildDir$` <br>
 4. In your header file directory change "MyNewProject/inc/stm8s_conf.h"
 >* commment and uncomment your desired list of included SPL ".h" files (i.e. "stm8s_gpio.h")
 5. Duplicate your build configuration from "MyProject OpenOCD" to "MyNewProject OpenOCD"
+6. Code your new STM8 robot army!!!
 
