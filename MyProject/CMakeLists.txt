@@ -11,26 +11,25 @@ endforeach ()
 add_executable(${PROJECT_NAME}
         src/assert_fail.c
 
-        #        ../lib/STM8_SPL/src/stm8s_adc1.c
-        #        ../lib/STM8_SPL/src/stm8s_awu.c
-        #        ../lib/STM8_SPL/src/stm8s_beep.c
-        ../lib/STM8_SPL/src/stm8s_clk.c
-        #        ../lib/STM8_SPL/src/stm8s_exti.c
-        #        ../lib/STM8_SPL/src/stm8s_flash.c
-        #        ../lib/STM8_SPL/src/stm8s_gpio.c
-        #        ../lib/STM8_SPL/src/stm8s_i2c.c
-        #        ../lib/STM8_SPL/src/stm8s_itc.c
-        #        ../lib/STM8_SPL/src/stm8s_iwdg.c
-        #        ../lib/STM8_SPL/src/stm8s_rst.c
-        #        ../lib/STM8_SPL/src/stm8s_spi.c
-        #        ../lib/STM8_SPL/src/stm8s_tim1.c
-        #        ../lib/STM8_SPL/src/stm8s_tim2.c
-        #        ../lib/STM8_SPL/src/stm8s_tim4.c
-        #        ../lib/STM8_SPL/src/stm8s_uart1.c
-        #        ../lib/STM8_SPL/src/stm8s_wwdg.c
+#        ../lib/STM8_SPL/src/stm8s_adc1.c
+#        ../lib/STM8_SPL/src/stm8s_awu.c
+#        ../lib/STM8_SPL/src/stm8s_beep.c
+#        ../lib/STM8_SPL/src/stm8s_clk.c
+#        ../lib/STM8_SPL/src/stm8s_exti.c
+#        ../lib/STM8_SPL/src/stm8s_flash.c
+        ../lib/STM8_SPL/src/stm8s_gpio.c
+#        ../lib/STM8_SPL/src/stm8s_i2c.c
+#        ../lib/STM8_SPL/src/stm8s_itc.c
+#        ../lib/STM8_SPL/src/stm8s_iwdg.c
+#        ../lib/STM8_SPL/src/stm8s_rst.c
+#        ../lib/STM8_SPL/src/stm8s_spi.c
+#        ../lib/STM8_SPL/src/stm8s_tim1.c
+#        ../lib/STM8_SPL/src/stm8s_tim2.c
+#        ../lib/STM8_SPL/src/stm8s_tim4.c
+#        ../lib/STM8_SPL/src/stm8s_uart1.c
+#        ../lib/STM8_SPL/src/stm8s_wwdg.c
 
         src/stm8s_it.c
-        src/clock.c
         src/main.c
 )
 target_include_directories(${PROJECT_NAME} BEFORE PRIVATE inc ../lib/STM8_SPL/inc)

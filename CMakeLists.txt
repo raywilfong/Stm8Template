@@ -28,10 +28,10 @@ set(LOG_VERBOSE true)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_C_STANDARD 11)
 
-add_compile_options(-mstm8)
-add_link_options(-mstm8 -lstm8 --out-fmt-elf)
+add_compile_options(-mstm8 --debug --out-fmt-elf --opt-code-size)
+add_link_options(-mstm8 --nostdlib --code-size 8192 --iram-size 1024 --out-fmt-elf -lstm8)
 
-add_definitions(-DSTM8S103)
+add_definitions(-DSTM8S103 -DUSE_STDPERIPH_DRIVER -DUSE_STDINT)
 
 include_directories(PUBLIC ~/.local/share/sdcc/include)
 
