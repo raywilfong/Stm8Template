@@ -21,7 +21,7 @@ but it should work in Windows (WSL?) with tweaks.
 5. Set a breakpoint in the code and click the debug button... *NOTE: Cross Fingers for Good Luck*
 5. (Optional) Load the SVD file from MISC_INSTALL_FILES/STM8S103F3.svd
 
-## Components (Required tool-chain elements):
+## Components (Required toolchain elements):
 * Small Device C Compiler 4.2.0 [SDCC](https://sdcc.sourceforge.net/)
   * Installed in my Debian environment with apt: `apt install sdcc`
   * Verify install with `sdcc --version`
