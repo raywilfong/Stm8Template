@@ -1,4 +1,4 @@
-# Ray's STM8 Clion Template
+# Ray's STM8 CLion Template
 
 ## About:
 This template is designed for quick startup of STM8 Microcontroller development projects in CLion. It uses current best
