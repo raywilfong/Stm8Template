@@ -28,8 +28,8 @@ Working Directory: `$CMakeCurrentBuildDir$` <br>
 * STM8 Toolchain with GDB (stm8-gdb) [instructions](https://stm8-binutils-gdb.sourceforge.io/)
 >* Verify install with `stm8-gdb --version`
 * OpenOCD v0.12.0
->* (web site)[https://openocd.org/pages/getting-openocd.html]
->* (source)[https://sourceforge.net/p/openocd/code/ci/master/tree/]
+>* [Web site](https://openocd.org/pages/getting-openocd.html)
+>* [Source code](https://sourceforge.net/p/openocd/code/ci/master/tree/)
 >* Verify install with `openocd --version`
 * stm8flash (because openocd freaks out when uploading) [github source](https://github.com/vdudouyt/stm8flash)
 >* Don't forget to read the INSTALL file that tells you to run: `apt-get install pkg-config libusb-1.0-0-dev`
@@ -49,10 +49,9 @@ Working Directory: `$CMakeCurrentBuildDir$` <br>
 1. Copy the MyProject folder to a new name like **MyNewProjectName**
 2. At the bottom of the root **CMakeLists.txt** file, add this: `add_subdirectory(MyNewProjectName)`
 3. In your new directory, edit that **CMakeLists.txt**
->* change your project name: `project(MyNewProject C)` 
+>* change your project name: `project(MyNewProjectName C)` 
 >* commment and uncomment your desired list of included SPL ".c" files (i.e. "stm8s_gpio.c")
-4. In your header file directory change "MyNewProject/inc/stm8s_conf.h"
->* commment and uncomment your desired list of included SPL ".h" files (i.e. "stm8s_gpio.h")
-5. Duplicate your build configuration from "MyProject OpenOCD" to "MyNewProject OpenOCD"
+4. Build your new project so an initial ".elf" file will exist: "cmake-build-debug-stm8s103/MyNewProjectName/MyNewProjectName.elf" 
+5. Edit build configurations and copy the "MyProject OpenOCD" to "MyNewProjectName OpenOCD" 
+>* "Executable binary" points to the elf file you just built
 6. Code your new STM8 robot army!!!
-

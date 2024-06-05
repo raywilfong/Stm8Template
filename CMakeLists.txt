@@ -37,3 +37,4 @@ include_directories(PUBLIC ~/.local/share/sdcc/include)
 
 add_subdirectory(lib/STM8_SPL)
 add_subdirectory(MyProject)
+add_subdirectory(SPLHeaderOnlyProject)

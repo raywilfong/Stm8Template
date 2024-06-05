@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.28)
 
-project(MyProject C)
+project(SPLHeaderOnlyProject C)
 
 add_executable(${PROJECT_NAME}
         src/assert_fail.c
@@ -17,7 +17,7 @@ add_executable(${PROJECT_NAME}
 #        ../lib/STM8_SPL/src/stm8s_clk.c
 #        ../lib/STM8_SPL/src/stm8s_exti.c
 #        ../lib/STM8_SPL/src/stm8s_flash.c
-        ../lib/STM8_SPL/src/stm8s_gpio.c
+#        ../lib/STM8_SPL/src/stm8s_gpio.c
 #        ../lib/STM8_SPL/src/stm8s_i2c.c
 #        ../lib/STM8_SPL/src/stm8s_itc.c
 #        ../lib/STM8_SPL/src/stm8s_iwdg.c
