@@ -18,10 +18,16 @@ Name: `stm8flash STM8S103` <br>
 Program: `stm8flash` <br>
 Arguments: `-c stlinkv2 -p stm8s103?3 -s flash -w ./$CMakeCurrentTargetName$.hex` <br>
 Working Directory: `$CMakeCurrentBuildDir$` <br>
-5. Set a breakpoint in the code and click the debug button... *NOTE: Cross Fingers for Good Luck*
-6. (Optional) Load the SVD file from MISC_INSTALL_FILES/STM8S103F3.svd
+5. Configure stm8-gdb toolchain as in [this image](./MISC_INSTALL_FILES/stm8-gdb.png) <br>
+Name: `STM8-GDB` <br>
+Debugger: `/PATH/TO/stm8-gdb` <br>
+6. Verify your Run Configurations: `OpenOCD ***` configurations must use the STM8-GDB Debugger [as seen here](./MISC_INSTALL_FILES/run-config.png)
+7. Set a breakpoint in the code and click the debug button... *NOTE: Cross Fingers for Good Luck*
+8(Optional) Load the SVD file from MISC_INSTALL_FILES/STM8S103F3.svd
 
 ## Components (Required toolchain elements):
+* General list of build tools:
+>* apt-get install build-essential git autoconf libtool make pkg-config libusb-1.0-0 libusb-1.0-0-dev texinfo
 * Small Device C Compiler 4.2.0 [SDCC](https://sdcc.sourceforge.net/)
 >* Installed in my Debian environment with apt: `apt install sdcc`
 >* Verify install with `sdcc --version`
@@ -32,7 +38,6 @@ Working Directory: `$CMakeCurrentBuildDir$` <br>
 >* [Source code](https://sourceforge.net/p/openocd/code/ci/master/tree/)
 >* Verify install with `openocd --version`
 * stm8flash (because openocd freaks out when uploading) [github source](https://github.com/vdudouyt/stm8flash)
->* Don't forget to read the INSTALL file that tells you to run: `apt-get install pkg-config libusb-1.0-0-dev`
 >* Verify install with `stm8flash -V`
 * STM8 Standard Peripheral Library 2.3.1 [STSW-STM8069](https://www.st.com/en/embedded-software/stsw-stm8069.html)
 >* Patched for SDCC with [STM8-SPL_SDCC_patch](https://github.com/gicking/STM8-SPL_SDCC_patch)
