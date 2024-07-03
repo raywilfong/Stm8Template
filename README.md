@@ -2,8 +2,8 @@
 
 ## About:
 This template is designed for quick startup of STM8 Microcontroller development projects in CLion. It uses current best
-practices from JetBrains related to configuration of external compilers. It was designed for development in Linux environment,
-but it should work in Windows (WSL?) with tweaks.
+practices from JetBrains related to configuration of external compilers. It was originally configured for development in Linux environments,
+but I also added WSL instructions for use with Windows 11. For WSL, CLion is running using the JetBrains Gateway into the WSL instance.
 
 ## Instructions for use
 1. Install each of the **Components** below
@@ -28,6 +28,8 @@ Debugger: `/PATH/TO/stm8-gdb` <br>
 ## Components (Required toolchain elements):
 * General list of build tools:
 >* apt-get install build-essential git autoconf libtool make pkg-config libusb-1.0-0 libusb-1.0-0-dev texinfo
+* Additional tools needed when configuring a Windows 11 WSL2 instance of Debian:  
+>* apt-get install cmake gcc clang gdb usbutils wget bash-completion unzip
 * Small Device C Compiler 4.2.0 [SDCC](https://sdcc.sourceforge.net/)
 >* Installed in my Debian environment with apt: `apt install sdcc`
 >* Verify install with `sdcc --version`
@@ -41,6 +43,18 @@ Debugger: `/PATH/TO/stm8-gdb` <br>
 >* Verify install with `stm8flash -V`
 * STM8 Standard Peripheral Library 2.3.1 [STSW-STM8069](https://www.st.com/en/embedded-software/stsw-stm8069.html)
 >* Patched for SDCC with [STM8-SPL_SDCC_patch](https://github.com/gicking/STM8-SPL_SDCC_patch)
+* (Windows with WSL2 only) WSL2 per instructions [here](https://learn.microsoft.com/en-us/windows/wsl/install)
+>* Debian was used as the default WSL instance for this project
+>* Installed on my Win 11 host using: wsl --install -d Debian
+* (Windows with WSL2 only) USBIPD-WIN allows WSL environments to use USB Devices
+>* See the instructions [here](https://learn.microsoft.com/en-us/windows/wsl/connect-usb)
+>* Admin Powershell Commands used:
+>>* usbipd.exe list
+>>* usbipd.exe bind --busid 14-2
+>>* usbipd attach --wsl --busid 14-2
+* (Windows with WSL2 only) UDEV service must be running. Change /etc/wsl.conf as follows:
+> [boot] <br>
+> command="service udev start"
 
 ## Configuration Files
 * OpenOCD configuration scripts (place in openocd scripts directory)

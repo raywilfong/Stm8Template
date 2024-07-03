@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.28)
+cmake_minimum_required(VERSION 3.25)
 project(STM8_SPL C)
 
 file(GLOB_RECURSE SPL_SOURCES "src/*.c")
