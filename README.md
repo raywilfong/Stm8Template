@@ -1,5 +1,9 @@
 # Ray's STM8 CLion Template
 
+## IMPORTANT NOTE:
+I have recently converted this to a CLion Dev Container. I will update this documentation soon, but most of this can be ignored.  
+## **\*\*\*I still need to test this dev container configuration to make sure debugging works.** 
+
 ## About:
 This template is designed for quick startup of STM8 Microcontroller development projects in CLion. It uses current best
 practices from JetBrains related to configuration of external compilers. It was originally configured for development in Linux environments,
@@ -13,15 +17,18 @@ but I also added WSL instructions for use with Windows 11. For WSL, CLion is run
 `ln -s /PATH/TO/STM8/LIBRARY/inc inc` <br>
 `rm src` <br>
 `ln -s /PATH/TO/STM8/LIBRARY/src src` <br>
-4. Add an external tool with [these settings](./MISC_INSTALL_FILES/stm8flash.png) <br>
+4. Add an external tool:  
 Name: `stm8flash STM8S103` <br>
 Program: `stm8flash` <br>
 Arguments: `-c stlinkv2 -p stm8s103?3 -s flash -w ./$CMakeCurrentTargetName$.hex` <br>
 Working Directory: `$CMakeCurrentBuildDir$` <br>
-5. Configure stm8-gdb toolchain as in [this image](./MISC_INSTALL_FILES/stm8-gdb.png) <br>
+![these settings](.devcontainer/MISC_INSTALL_FILES/stm8flash.png) <br>
+5. Configure stm8-gdb toolchain  
 Name: `STM8-GDB` <br>
 Debugger: `/PATH/TO/stm8-gdb` <br>
-6. Verify your Run Configurations: `OpenOCD ***` configurations must use the STM8-GDB Debugger [as seen here](./MISC_INSTALL_FILES/run-config.png)
+![this image](.devcontainer/MISC_INSTALL_FILES/stm8-gdb.png) <br>
+6. Verify your Run Configurations: `OpenOCD ***` configurations must use the STM8-GDB Debugger  
+![as seen here](.devcontainer/MISC_INSTALL_FILES/run-config.png)
 7. Set a breakpoint in the code and click the debug button... *NOTE: Cross Fingers for Good Luck*
 8(Optional) Load the SVD file from MISC_INSTALL_FILES/STM8S103F3.svd
 
