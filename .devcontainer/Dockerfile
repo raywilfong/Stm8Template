@@ -6,7 +6,7 @@ WORKDIR /
 RUN apt-get update \
     && apt-get install -y \
     build-essential git autoconf libtool make pkg-config libusb-1.0-0 libusb-1.0-0-dev texinfo \
-    cmake gcc clang gdb usbutils wget bash-completion unzip sdcc udev
+    cmake gcc clang gdb usbutils wget bash-completion unzip sdcc
 
 WORKDIR /tmp/STM8TOOLCHAIN
 RUN wget https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-gdb-sources-2021-07-18.tar.gz/download -O - \
@@ -54,7 +54,7 @@ WORKDIR  /usr/local/share/openocd/scripts/board
 COPY MISC_INSTALL_FILES/openocd/scripts/board/* .
 WORKDIR  /usr/local/share/openocd/scripts/target
 COPY MISC_INSTALL_FILES/openocd/scripts/target/* .
-WORKDIR  /etc/udev/rules.d
-COPY MISC_INSTALL_FILES/etc/udev/rules.d/* .
+WORKDIR /root
+COPY MISC_INSTALL_FILES/root/.bash_history .
 
 WORKDIR /

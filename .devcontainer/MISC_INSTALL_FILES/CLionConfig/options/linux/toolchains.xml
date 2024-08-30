@@ -1,0 +1,7 @@
+<application>
+  <component name="CPPToolchains" version="9">
+    <toolchains detectedVersion="5">
+      <toolchain name="STM8-GDB" toolSetKind="SYSTEM_UNIX_TOOLSET" debuggerKind="CUSTOM_GDB" customGDBPath="/usr/local/bin/stm8-gdb" />
+    </toolchains>
+  </component>
+</application>

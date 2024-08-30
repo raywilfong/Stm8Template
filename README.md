@@ -2,7 +2,27 @@
 
 ## IMPORTANT NOTE:
 I have recently converted this to a CLion Dev Container. I will update this documentation soon, but most of this can be ignored.  
-## **\*\*\*I still need to test this dev container configuration to make sure debugging works.** 
+## **\*\*\*This now connects for flashing and debugging. I need to document the new process.**
+TODO: When I update the document I will explain that this container has to run in privileged mode, and cannot run in
+rootless mode. Just make sure you're using the default docker context, and all will work. This is a limitation of
+accessing the host's usb devices.  
+
+Also note that CLion doesn't add the configuration settings until after it runs inside the container at least once.
+To make things more convoluted, the destination directory for configuration is different for each version of CLion.
+So, when CLion opens inside the container, I go to the terminal, press the up arrow to show my bash history and run the
+special "find" command that happens to be in the bash history (magic perhaps - or something I did in the Dockerfile?).
+Then I close the dev container for CLion, and restart/connect to the existing container. Now my build configurations
+work and the stm8flash utility is listed as an external tool. More Magic!!!  
+
+I'm currently binding all USB devices so stm8flash and openOCD can both access the mounted st-link, and can find it
+after reconnecting the st-link even on a different USB port.  
+
+Finally I need to point out that
+the instructions below are no longer needed because my new dev container's image builds in three minutes (I do have
+16 cores/24 threads so my build runs relatively fast). Startup after that is 15 seconds. Yay!  
+
+One last thing to remember: If running docker on Windows, you probably have to do the usbipd thing mentioned below for
+WSL.
 
 ## About:
 This template is designed for quick startup of STM8 Microcontroller development projects in CLion. It uses current best

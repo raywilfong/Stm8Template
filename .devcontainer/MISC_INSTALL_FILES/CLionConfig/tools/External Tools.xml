@@ -1,0 +1,9 @@
+<toolSet name="External Tools">
+  <tool name="stm8flash STM8S103" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="stm8flash" />
+      <option name="PARAMETERS" value="-c stlinkv2 -p stm8s103?3 -s flash -w ./$CMakeCurrentTargetName$.hex" />
+      <option name="WORKING_DIRECTORY" value="$CMakeCurrentBuildDir$" />
+    </exec>
+  </tool>
+</toolSet>
