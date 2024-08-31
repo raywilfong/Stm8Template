@@ -1,12 +1,9 @@
 FROM debian:12.6-slim AS tool-builder
 LABEL authors="Raymond Wilfong"
 
-WORKDIR /
-
 RUN apt-get update \
     && apt-get install -y \
-    build-essential git autoconf libtool make pkg-config libusb-1.0-0 libusb-1.0-0-dev texinfo \
-    cmake gcc clang gdb usbutils wget bash-completion unzip sdcc
+    build-essential git autoconf libtool make pkg-config libusb-1.0-0 libusb-1.0-0-dev texinfo wget unzip
 
 WORKDIR /tmp/STM8TOOLCHAIN
 RUN wget https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-gdb-sources-2021-07-18.tar.gz/download -O - \
@@ -48,6 +45,19 @@ RUN git clone https://github.com/gicking/STM8-SPL_SDCC_patch.git \
     && mv STM8S_StdPeriph_Lib /usr/local/share/. \
     && cd ../.. \
     && rm -rf ./STM8SPL
+
+
+
+FROM debian:12.6-slim AS stm8-environment
+LABEL authors="Raymond Wilfong"
+
+COPY --from=tool-builder /usr/local/ /usr/local/
+
+RUN apt-get update \
+    && apt-get install -y \
+    build-essential git make gcc clang gdb sdcc bash-completion libusb-1.0-0 usbutils
+#    build-essential git autoconf libtool make pkg-config libusb-1.0-0 libusb-1.0-0-dev texinfo \
+#    cmake gcc clang gdb usbutils wget bash-completion unzip sdcc
 
 # MISC_INSTALL_FILES moving into place:
 WORKDIR  /usr/local/share/openocd/scripts/board
