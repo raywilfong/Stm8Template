@@ -42,13 +42,13 @@ Name: `stm8flash STM8S103` <br>
 Program: `stm8flash` <br>
 Arguments: `-c stlinkv2 -p stm8s103?3 -s flash -w ./$CMakeCurrentTargetName$.hex` <br>
 Working Directory: `$CMakeCurrentBuildDir$` <br>
-![these settings](.devcontainer/MISC_INSTALL_FILES/stm8flash.png) <br>
+![these settings](DockerImage/MISC_INSTALL_FILES/stm8flash.png) <br>
 5. Configure stm8-gdb toolchain  
 Name: `STM8-GDB` <br>
 Debugger: `/PATH/TO/stm8-gdb` <br>
-![this image](.devcontainer/MISC_INSTALL_FILES/stm8-gdb.png) <br>
+![this image](DockerImage/MISC_INSTALL_FILES/stm8-gdb.png) <br>
 6. Verify your Run Configurations: `OpenOCD ***` configurations must use the STM8-GDB Debugger  
-![as seen here](.devcontainer/MISC_INSTALL_FILES/run-config.png)
+![as seen here](DockerImage/MISC_INSTALL_FILES/run-config.png)
 7. Set a breakpoint in the code and click the debug button... *NOTE: Cross Fingers for Good Luck*
 8(Optional) Load the SVD file from MISC_INSTALL_FILES/STM8S103F3.svd
 

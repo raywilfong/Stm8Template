@@ -2,9 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/cpp
 {
 	"name": "STM8 C++",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+	"image": "rwilfong/stm8-dev",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
