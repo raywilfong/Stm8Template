@@ -55,7 +55,7 @@ COPY --from=tool-builder /usr/local/ /usr/local/
 
 RUN apt-get update \
     && apt-get install -y \
-    build-essential git make gcc clang gdb sdcc bash-completion libusb-1.0-0 usbutils
+    build-essential git make gcc clang gdb sdcc bash-completion libusb-1.0-0 usbutils libjim-dev
 #    build-essential git autoconf libtool make pkg-config libusb-1.0-0 libusb-1.0-0-dev texinfo \
 #    cmake gcc clang gdb usbutils wget bash-completion unzip sdcc
 
