@@ -3,7 +3,7 @@ LABEL authors="Raymond Wilfong"
 
 RUN apt-get update \
     && apt-get install -y \
-    build-essential git autoconf libtool make pkg-config libusb-1.0-0 libusb-1.0-0-dev texinfo wget unzip
+    build-essential git autoconf libtool make pkg-config libusb-1.0-0 libusb-1.0-0-dev texinfo wget unzip libjim-dev
 
 WORKDIR /tmp/STM8TOOLCHAIN
 RUN wget https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-gdb-sources-2021-07-18.tar.gz/download -O - \
@@ -18,7 +18,7 @@ RUN wget https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-
     && rm -rf ./STM8TOOLCHAIN
 
 WORKDIR /tmp/OPENOCD
-RUN git clone git://repo.or.cz/openocd.git \
+RUN git clone https://github.com/openocd-org/openocd.git code \
     && cd code \
     && ./bootstrap \
     && ./configure \
