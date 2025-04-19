@@ -33,7 +33,7 @@ add_executable(${PROJECT_NAME}
         src/stm8s_it.c
         src/main.c
 )
-target_include_directories(${PROJECT_NAME} BEFORE PRIVATE inc ../lib/STM8_SPL/inc)
+target_include_directories(${PROJECT_NAME} BEFORE PRIVATE inc ../../lib/STM8_SPL/inc)
 set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".elf")
 
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)

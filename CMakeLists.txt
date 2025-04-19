@@ -36,5 +36,5 @@ add_definitions(-DSTM8S103 -DUSE_STDPERIPH_DRIVER -DUSE_STDINT)
 include_directories(PUBLIC ~/.local/share/sdcc/include)
 
 add_subdirectory(lib/STM8_SPL)
-add_subdirectory(MyProject)
-add_subdirectory(SPLHeaderOnlyProject)
+add_subdirectory(Projects/MyProject)
+add_subdirectory(Projects/SPLHeaderOnlyProject)

@@ -18,7 +18,7 @@ RUN wget https://sourceforge.net/projects/stm8-binutils-gdb/files/stm8-binutils-
     && rm -rf ./STM8TOOLCHAIN
 
 WORKDIR /tmp/OPENOCD
-RUN git clone https://git.code.sf.net/p/openocd/code \
+RUN git clone git://repo.or.cz/openocd.git \
     && cd code \
     && ./bootstrap \
     && ./configure \
