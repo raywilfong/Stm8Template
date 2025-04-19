@@ -33,3 +33,15 @@ When the container first starts up, it needs to have the build and external tool
 5. Edit build configurations and copy the "MyProject OpenOCD" to "MyNewProjectName OpenOCD"
 >* "Executable binary" points to the elf file you just built
 6. Code your new STM8 robot army!!!
+
+
+## Todo: WSL Specific help ##
+* (Windows with WSL2 only) USBIPD-WIN allows WSL environments to use USB Devices
+>* See the instructions [here](https://learn.microsoft.com/en-us/windows/wsl/connect-usb)
+>* Admin Powershell Commands used:
+>>* usbipd.exe list
+>>* usbipd.exe bind --busid 14-2
+>>* usbipd attach --wsl --busid 14-2
+* (Windows with WSL2 only) UDEV service must be running. Change /etc/wsl.conf as follows:
+> [boot] <br>
+> command="service udev start"
